@@ -41,7 +41,8 @@ public class SessionFactoryBuilder {
 	 * @return the session factory
 	 * @throws Exception
 	 */
-	public static SessionFactory getSessionFactory() throws Exception {
+	public static synchronized SessionFactory getSessionFactory()
+			throws Exception {
 		if (sessionFactory == null) {
 			sessionFactory = buildSessionFactory();
 		}

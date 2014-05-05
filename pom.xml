@@ -9,6 +9,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<developers>
+		<developer>
+			<id>dev1</id>
+			<name>Vincent Roederer</name>
+			<email>vincent.roederer@haw-hamburg.de</email>
+		</developer>
+		<developer>
+			<id>dev2</id>
+			<name>André Behrens</name>
+			<email>andre.behrens@haw-hamburg.de</email>
+		</developer>
+	</developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
