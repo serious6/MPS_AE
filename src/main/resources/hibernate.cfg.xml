@@ -5,7 +5,7 @@
 <hibernate-configuration>
    <session-factory>
       <property name="connection.url">
-          jdbc:mysql://localhost:3306/hibernatetest
+          jdbc:mysql://localhost:3306/mps
       </property>
       <property name="connection.username">root</property>
       <property name="connection.password">root</property>
@@ -27,6 +27,18 @@
       <property name="hibernate.hbm2ddl.auto">create</property>
       
       <!-- Classes to be mapped -->
-<!--       <mapping class="de.hawhamburg.tables.Adress" /> -->
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Angebot" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Arbeitsplan" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Auftrag" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Bauteil" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Fertigungsauftrag" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Kunde" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Lieferung" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Rechnung" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Stueckliste" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.StuecklistenPosition" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Transportauftrag" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Vorgang" />
+      <mapping class="bai5_hibernate.MPS_AE.hibernate.tables.Zahlungseingang" />
    </session-factory>
 </hibernate-configuration>

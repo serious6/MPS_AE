@@ -2,11 +2,15 @@ package bai5_hibernate.MPS_AE.hibernate.tables;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Table;
 
+@Entity(name = "Kunde")
+@Table(appliesTo = "Kunde")
 public class Kunde implements Serializable {
 	@Id
 	@GeneratedValue
