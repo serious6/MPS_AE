@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -23,7 +24,11 @@ public class Vorgang implements Serializable {
 	@Column(nullable = false)
 	private VorgangArtTyp art;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	private long ruestzeit;
+	private long maschinenzeit;
+	private long personenzeit;
+	
+	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private Arbeitsplan arbeitsplan;
 
 	public VorgangArtTyp getArt() {
@@ -44,5 +49,29 @@ public class Vorgang implements Serializable {
 
 	public Long getNummer() {
 		return nummer;
+	}
+
+	public long getRuestzeit() {
+		return ruestzeit;
+	}
+
+	public void setRuestzeit(long ruestzeit) {
+		this.ruestzeit = ruestzeit;
+	}
+
+	public long getMaschinenzeit() {
+		return maschinenzeit;
+	}
+
+	public void setMaschinenzeit(long maschinenzeit) {
+		this.maschinenzeit = maschinenzeit;
+	}
+
+	public long getPersonenzeit() {
+		return personenzeit;
+	}
+
+	public void setPersonenzeit(long personenzeit) {
+		this.personenzeit = personenzeit;
 	}
 }

@@ -3,6 +3,7 @@ package bai5_hibernate.MPS_AE.hibernate.tables;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -19,7 +20,7 @@ public class StuecklistenPosition implements Serializable {
 	@GenericGenerator(name = "idGen", strategy = "increment")
 	private Long nummer;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Bauteil bauteil;
 
 	public Bauteil getBauteil() {

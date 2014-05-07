@@ -19,10 +19,11 @@ public class AuftragTest extends GeneralTest {
 	private Bauteil bauteil;
 	private Arbeitsplan arbeitsplan;
 	private Vorgang vorgang;
+	private Auftrag auftrag;
 
 	@Test
 	public void test1() throws Exception {
-		Auftrag auftrag = new Auftrag();
+		auftrag = new Auftrag();
 		auftrag.setBeauftragtAm(new Date());
 		auftrag.setIstAbgeschlossen(false);
 		auftrag.setFertigungsauftrag(getFertigungsauftrag(auftrag));
@@ -44,6 +45,7 @@ public class AuftragTest extends GeneralTest {
 	private Bauteil getBauteil(Fertigungsauftrag fertigungsauftrag) throws Exception {
 		bauteil = new Bauteil();
 		bauteil.setArbeitsplan(getArbeitsplan(bauteil));
+		bauteil.setName("Erstes Bauteil");
 		
 		bauteilDao.add(bauteil);
 		bauteil.addFertigungsauftrag(fertigungsauftrag);
@@ -77,8 +79,29 @@ public class AuftragTest extends GeneralTest {
 		return vorgangsliste;
 	}
 	
-	public void testFertigungArtikel(){
+	@Test
+	public void testFertigungArtikel() throws Exception{
+		auftragErstellen();
 		
+		auftrag = auftragDao.findById(auftrag.getNummer());
+		arbeitsplan = auftrag.getFertigungsauftrag().getBauteil().getArbeitsplan();
+		
+		for (Vorgang vorgang : arbeitsplan.getVorgangsListe()) {
+			vorgang.setArt(VorgangArtTyp.MONTAGE);
+			vorgangDao.update(vorgang);
+		}
+	}
+
+	private void auftragErstellen() throws Exception {
+		auftrag = new Auftrag();
+		auftrag.setBeauftragtAm(new Date());
+		auftrag.setIstAbgeschlossen(false);
+		auftrag.setFertigungsauftrag(getFertigungsauftrag(auftrag));
+		
+		auftragDao.add(auftrag);
+		
+		fertigungsauftrag.setAuftrag(auftrag);
+		fertigungsauftragDao.update(fertigungsauftrag);		
 	}
 
 }

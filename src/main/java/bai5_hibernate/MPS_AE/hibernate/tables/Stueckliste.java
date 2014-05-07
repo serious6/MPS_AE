@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -21,7 +22,7 @@ public class Stueckliste implements Serializable {
 	@GenericGenerator(name = "idGen", strategy = "increment")
 	private Long nummer;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	private Bauteil bauteil;
 
 	public Bauteil getBauteil() {

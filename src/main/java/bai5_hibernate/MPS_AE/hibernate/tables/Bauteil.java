@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -24,7 +26,10 @@ public class Bauteil implements Serializable {
 	@GenericGenerator(name = "idGen", strategy = "increment")
 	private Long nummer;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@Column(nullable = false)
+	private String name;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Fertigungsauftrag> fertigungsauftragListe = new ArrayList<Fertigungsauftrag>();
 	
 	@OneToOne
@@ -33,7 +38,7 @@ public class Bauteil implements Serializable {
 	@OneToOne
 	private Stueckliste stueckliste;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<StuecklistenPosition> stuecklistenPositions = new ArrayList<StuecklistenPosition>();
 
 	public List<Fertigungsauftrag> getFertigungsauftragListe() {
@@ -80,5 +85,13 @@ public class Bauteil implements Serializable {
 
 	public Long getNummer() {
 		return nummer;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }
