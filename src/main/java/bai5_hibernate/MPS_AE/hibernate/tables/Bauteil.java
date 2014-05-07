@@ -2,7 +2,9 @@ package bai5_hibernate.MPS_AE.hibernate.tables;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,11 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Table;
 
@@ -30,7 +30,7 @@ public class Bauteil implements Serializable {
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Fertigungsauftrag> fertigungsauftragListe = new ArrayList<Fertigungsauftrag>();
+	private Set<Fertigungsauftrag> fertigungsauftragListe = new HashSet<Fertigungsauftrag>();
 	
 	@OneToOne
 	private Arbeitsplan arbeitsplan;
@@ -39,14 +39,14 @@ public class Bauteil implements Serializable {
 	private Stueckliste stueckliste;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<StuecklistenPosition> stuecklistenPositions = new ArrayList<StuecklistenPosition>();
+	private Set<StuecklistenPosition> stuecklistenPositions = new HashSet<StuecklistenPosition>();
 
-	public List<Fertigungsauftrag> getFertigungsauftragListe() {
+	public Set<Fertigungsauftrag> getFertigungsauftragListe() {
 		return fertigungsauftragListe;
 	}
 
 	public void setFertigungsauftragListe(
-			List<Fertigungsauftrag> fertigungsauftragListe) {
+			Set<Fertigungsauftrag> fertigungsauftragListe) {
 		this.fertigungsauftragListe = fertigungsauftragListe;
 	}
 	
@@ -70,12 +70,12 @@ public class Bauteil implements Serializable {
 		this.stueckliste = stueckliste;
 	}
 
-	public List<StuecklistenPosition> getStuecklistenPositions() {
+	public Set<StuecklistenPosition> getStuecklistenPositions() {
 		return stuecklistenPositions;
 	}
 
 	public void setStuecklistenPositions(
-			List<StuecklistenPosition> stuecklistenPositions) {
+			Set<StuecklistenPosition> stuecklistenPositions) {
 		this.stuecklistenPositions = stuecklistenPositions;
 	}
 	

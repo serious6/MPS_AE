@@ -1,9 +1,10 @@
 package bai5_hibernate.MPS_AE;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import bai5_hibernate.MPS_AE.hibernate.tables.Arbeitsplan;
@@ -32,6 +33,8 @@ public class AuftragTest extends GeneralTest {
 		
 		fertigungsauftrag.setAuftrag(auftrag);
 		fertigungsauftragDao.update(fertigungsauftrag);
+		
+		Assert.assertNotNull(auftrag.getNummer());
 	}
 
 	private Fertigungsauftrag getFertigungsauftrag(Auftrag auftrag) throws Exception {
@@ -69,8 +72,8 @@ public class AuftragTest extends GeneralTest {
 		return arbeitsplan;
 	}
 
-	private List<Vorgang> getVorgaenge(Arbeitsplan arbeitsplan) throws Exception {
-		ArrayList<Vorgang> vorgangsliste = new ArrayList<Vorgang>();
+	private Set<Vorgang> getVorgaenge(Arbeitsplan arbeitsplan) throws Exception {
+		HashSet<Vorgang> vorgangsliste = new HashSet<Vorgang>();
 		vorgang = new Vorgang();
 		vorgang.setArt(VorgangArtTyp.BEREITSTELLUNG);
 		
@@ -86,10 +89,22 @@ public class AuftragTest extends GeneralTest {
 		auftrag = auftragDao.findById(auftrag.getNummer());
 		arbeitsplan = auftrag.getFertigungsauftrag().getBauteil().getArbeitsplan();
 		
+		Vorgang vorgang2 = null;
 		for (Vorgang vorgang : arbeitsplan.getVorgangsListe()) {
 			vorgang.setArt(VorgangArtTyp.MONTAGE);
 			vorgangDao.update(vorgang);
+			
+			vorgang2 = vorgang;
 		}
+		
+		Assert.assertSame(VorgangArtTyp.MONTAGE, vorgangDao.findById(vorgang2.getNummer()).getArt());
+	}
+	
+	@Test
+	public void testComplex() throws Exception{
+		Bauteil bauteil = bauteilDao.findById(1l);
+		
+		Assert.assertFalse(bauteilDao.isComplex(bauteil));
 	}
 
 	private void auftragErstellen() throws Exception {

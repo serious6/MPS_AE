@@ -1,8 +1,9 @@
 package bai5_hibernate.MPS_AE.hibernate.tables;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ public class Arbeitsplan implements Serializable {
 	private Bauteil bauteil;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Vorgang> vorgangsListe = new ArrayList<Vorgang>();
+	private Set<Vorgang> vorgangsListe = new HashSet<Vorgang>();
 
 	public Bauteil getBauteil() {
 		return bauteil;
@@ -37,11 +38,11 @@ public class Arbeitsplan implements Serializable {
 		this.bauteil = bauteil;
 	}
 
-	public List<Vorgang> getVorgangsListe() {
+	public Set<Vorgang> getVorgangsListe() {
 		return vorgangsListe;
 	}
 
-	public void setVorgangsListe(List<Vorgang> vorgangsListe) {
+	public void setVorgangsListe(Set<Vorgang> vorgangsListe) {
 		this.vorgangsListe = vorgangsListe;
 	}
 
