@@ -1,10 +1,15 @@
 package bai5_hibernate.MPS_AE.hibernate.tables;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Table;
@@ -16,4 +21,30 @@ public class Arbeitsplan implements Serializable {
 	@GeneratedValue
 	@GenericGenerator(name = "idGen", strategy = "increment")
 	private Long nummer;
+	
+	@OneToOne
+	private Bauteil bauteil;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Vorgang> vorgangsListe = new ArrayList<Vorgang>();
+
+	public Bauteil getBauteil() {
+		return bauteil;
+	}
+
+	public void setBauteil(Bauteil bauteil) {
+		this.bauteil = bauteil;
+	}
+
+	public List<Vorgang> getVorgangsListe() {
+		return vorgangsListe;
+	}
+
+	public void setVorgangsListe(List<Vorgang> vorgangsListe) {
+		this.vorgangsListe = vorgangsListe;
+	}
+
+	public Long getNummer() {
+		return nummer;
+	}
 }

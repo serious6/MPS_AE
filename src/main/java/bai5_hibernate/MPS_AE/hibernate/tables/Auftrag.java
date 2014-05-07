@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Table;
@@ -22,4 +23,35 @@ public class Auftrag implements Serializable {
 	private boolean istAbgeschlossen;
 
 	private Date beauftragtAm;
+	
+	@OneToOne()
+	private Fertigungsauftrag fertigungsauftrag;
+
+	public boolean isIstAbgeschlossen() {
+		return istAbgeschlossen;
+	}
+
+	public void setIstAbgeschlossen(boolean istAbgeschlossen) {
+		this.istAbgeschlossen = istAbgeschlossen;
+	}
+
+	public Date getBeauftragtAm() {
+		return beauftragtAm;
+	}
+
+	public void setBeauftragtAm(Date beauftragtAm) {
+		this.beauftragtAm = beauftragtAm;
+	}
+
+	public Fertigungsauftrag getFertigungsauftrag() {
+		return fertigungsauftrag;
+	}
+
+	public void setFertigungsauftrag(Fertigungsauftrag fertigungsauftrag) {
+		this.fertigungsauftrag = fertigungsauftrag;
+	}
+
+	public Long getNummer() {
+		return nummer;
+	}
 }
