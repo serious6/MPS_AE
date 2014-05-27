@@ -26,6 +26,7 @@ public class App {
 	private final ScheduledExecutorService scheduledExecutor = Executors
 			.newScheduledThreadPool(3);
 
+	private boolean shutdown = false;
 	private ServerSocket socket;
 
 	public App() {
@@ -36,7 +37,7 @@ public class App {
 	public void listen() {
 		try {
 			socket = new ServerSocket(0);
-			while (true) {
+			while (!shutdown) {
 				// Incoming client requests
 				System.out.println(String.format(
 						"MPS Instance listening @ Port:%s",
@@ -58,6 +59,7 @@ public class App {
 							if (plainRequest.contains("doSo")) {
 								appTest.test1();
 							} else if (plainRequest.contains("shutdown")) {
+								shutdown = true;
 								executorService.shutdown();
 								scheduledExecutor.shutdown();
 							} else {
