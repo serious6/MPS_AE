@@ -18,90 +18,31 @@ import javax.json.JsonObject;
 
 public class App {
 
-	private final AppTest appTest;
+	protected final AppTest appTest;
 
-	private final ExecutorService executorService = Executors
-			.newFixedThreadPool(3);
-
-	private final ScheduledExecutorService scheduledExecutor = Executors
-			.newScheduledThreadPool(3);
-
-	private boolean shutdown = false;
 	private ServerSocket socket;
 
-	public App() {
+	public App(String[] args) {
 		this.appTest = new AppTest();
-		listen();
+		listen(args);
 	}
 
-	public void listen() {
+	public void listen(String[] args) {
+		final String monitorHost = "localhost";
+		final int monitorPort = 1339;
+
+		final int port = Integer.parseInt(args[0]);
+
 		try {
-			socket = new ServerSocket(0);
-			while (!shutdown) {
-				// Incoming client requests
-				System.out.println(String.format(
-						"MPS Instance listening @ Port:%s",
-						socket.getLocalPort()));
-				final Socket connection = socket.accept();
-				executorService.execute(new Runnable() {
+			final ServerSocket socket = new ServerSocket(port);
+			System.out.println("MPS Instance listening on port: " + port);
 
-					private BufferedReader inStream;
+			while (true) {
+				Socket connection = socket.accept();
+				System.out.println("Dispatcher connected from: " + connection.getRemoteSocketAddress().toString());
 
-					public void run() {
-						try {
-							inStream = new BufferedReader(
-									new InputStreamReader(connection
-											.getInputStream()));
-							JsonObject request = Json.createReader(
-									new StringReader(inStream.readLine()))
-									.readObject();
-							String plainRequest = request.getString("request");
-							if (plainRequest.contains("doSo")) {
-								appTest.test1();
-							} else if (plainRequest.contains("shutdown")) {
-								shutdown = true;
-								executorService.shutdown();
-								scheduledExecutor.shutdown();
-							} else {
-								System.err.println(plainRequest);
-							}
-						} catch (IOException e) {
-							e.printStackTrace();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-
-					}
-				});
-				scheduledExecutor.schedule(new Runnable() {
-
-					private final DataOutputStream outStream = new DataOutputStream(
-							connection.getOutputStream());
-
-					public void run() {
-						try {
-							JsonObject theObject = Json
-									.createObjectBuilder()
-									.add("response", "add")
-									.add("key",
-											connection.getInetAddress()
-													.getHostName())
-									.add("data",
-											Json.createObjectBuilder()
-													.add("status", "on")
-													.add("uptime", "100")
-													.add("requests", "0")
-													.add("systemLoad", "0"))
-									.build();
-
-							outStream.writeBytes(theObject.toString() + "\n");
-						} catch (UnknownHostException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-				}, 5, TimeUnit.SECONDS);
+				new MonitorConnection(monitorHost, monitorPort, "localhost", port);
+				new Thread(new DispatcherConnection(this, connection)).start();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -109,6 +50,6 @@ public class App {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new App();
+		new App(args);
 	}
 }
