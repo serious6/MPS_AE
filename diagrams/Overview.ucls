@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="bai5_hibernate.MPS_AE.manager.ExternalComponentManager" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/manager/ExternalComponentManager.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="186" x="408" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="bai5_hibernate.MPS_AE.App" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/App.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="130" x="2083" y="442"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="3" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.generic.IGenericDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/generic/IGenericDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="201" x="139" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="4" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Rechnung" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Rechnung.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="178" x="904" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.generic.GenericDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/generic/GenericDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="201" x="1420" y="617"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.FertigungsauftragDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/FertigungsauftragDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="380" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.TransportauftragDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/TransportauftragDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="1836" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="8" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.VorgangArtTyp" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/VorgangArtTyp.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="192" x="3484" y="1520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="9" language="java" name="bai5_hibernate.MPS_AE.MonitorConnection" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/MonitorConnection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="210" x="1393" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="bai5_hibernate.MPS_AE.hibernate.utils.SessionFactoryBuilder" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/utils/SessionFactoryBuilder.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="211" x="2151" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.LieferungDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/LieferungDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="1212" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Lieferung" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Lieferung.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="178" x="2402" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.AuftragDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/AuftragDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="588" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Angebot" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Angebot.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="178" x="2620" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Zahlungseingang" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Zahlungseingang.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="178" x="2838" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.ZahlungseingangDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/ZahlungseingangDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="1420" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Stueckliste" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Stueckliste.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="178" x="2788" y="1520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.RechnungDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/RechnungDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="2668" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Kunde" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Kunde.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="178" x="3056" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.StuecklistenPosition" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/StuecklistenPosition.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="178" x="3006" y="1520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Auftrag" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Auftrag.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="244" x="2613" y="1129"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.VorgangDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/VorgangDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="1004" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.ArbeitsplanDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/ArbeitsplanDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="1628" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Arbeitsplan" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Arbeitsplan.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="211" x="3233" y="1520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Vorgang" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Vorgang.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="182" x="3233" y="1129"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.StuecklisteDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/StuecklisteDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="2460" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Bauteil" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Bauteil.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="296" x="2897" y="1129"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Fertigungsauftrag" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Fertigungsauftrag.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="178" x="2897" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="bai5_hibernate.MPS_AE.hibernate.tables.Transportauftrag" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/tables/Transportauftrag.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="178" x="3274" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.KundeDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/KundeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="2252" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.BauteilDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/BauteilDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="168" x="796" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="bai5_hibernate.MPS_AE.AppTest" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/AppTest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="261" x="2252" y="617"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="bai5_hibernate.MPS_AE.Client" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/Client.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="184" x="3492" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="bai5_hibernate.MPS_AE.hibernate.dao.AngebotDao" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/hibernate/dao/AngebotDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="2044" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="bai5_hibernate.MPS_AE.DispatcherConnection" project="MPS_AE" 
+    file="/MPS_AE/src/main/java/bai5_hibernate/MPS_AE/DispatcherConnection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="196" x="1915" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="36">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="37" name="kundeDao"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="39">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="40" name="fertigungsauftragDao"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <realization id="43">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <association id="44">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="45" name="bauteil"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="48" name="fertigungsauftrag"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <bendpoint x="2866" y="900"/>    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="51" name="auftrag"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="54" name="arbeitsplan"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="57" name="vorgangDao"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="60" name="auftragDao"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="63" name="arbeitsplanDao"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="66" name="stuecklistenPositions"/>      
+      <multiplicity id="67" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="68">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="69" name="angebotDao"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="72" name="arbeitsplan"/>      
+      <multiplicity id="73" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="75">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="76" name="fertigungsauftrag"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="78">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="79" name="stuecklisteDao"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="82" name="vorgangsListe"/>      
+      <multiplicity id="83" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="85">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="86" name="app"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="89" name="lieferungDao"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="92" name="bauteil"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <bendpoint x="3105" y="900"/>    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="95" name="bauteil"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="97">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="99">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="100" name="fertigungsauftragListe"/>      
+      <multiplicity id="101" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="102">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="103">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="105">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="106" name="bauteilDao"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="109" name="art"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="111">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="112" name="auftrag"/>      
+      <multiplicity id="113" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="114">    
+    <bendpoint x="3445" y="900"/>    
+    <bendpoint x="3445" y="1129"/>    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="115" name="arbeitsplan"/>      
+      <multiplicity id="116" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="117">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="118" name="appTest"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="121" name="bauteil"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="123">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="124">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="125" name="stueckliste"/>      
+      <multiplicity id="126" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="128" name="transportauftragDao"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="131" name="rechnungDao"/>      
+      <multiplicity id="132" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="133">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="134" name="bauteil"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="136">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="137">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="138">    
+    <bendpoint x="3126" y="900"/>    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="139" name="vorgang"/>      
+      <multiplicity id="140" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="141">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="142">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="143" name="zahlungseingangDao"/>      
+      <multiplicity id="144" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
