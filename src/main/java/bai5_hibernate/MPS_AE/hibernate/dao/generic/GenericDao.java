@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 import bai5_hibernate.MPS_AE.hibernate.utils.SessionFactoryBuilder;
 
+@Repository
 public class GenericDao<T extends Serializable> implements IGenericDao<T> {
 
 	private final Class<T> typeParameterClass;

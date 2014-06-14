@@ -6,10 +6,12 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import bai5_hibernate.MPS_AE.hibernate.dao.generic.GenericDao;
 import bai5_hibernate.MPS_AE.hibernate.tables.Bauteil;
 
+@Repository
 public class BauteilDao extends GenericDao<Bauteil> {
 
 	public BauteilDao() {
