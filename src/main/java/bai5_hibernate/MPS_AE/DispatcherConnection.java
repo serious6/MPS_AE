@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class DispatcherConnection implements Runnable {
-	private Socket socket;
-	private App app;
+	private final Socket socket;
+	private final App app;
 	private BufferedReader inStream;
 
 	DispatcherConnection(App app, Socket socket) {
@@ -15,10 +15,10 @@ public class DispatcherConnection implements Runnable {
 		this.socket = socket;
 	}
 
-	@Override
 	public void run() {
 		try {
-			inStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			inStream = new BufferedReader(new InputStreamReader(
+					socket.getInputStream()));
 
 			while (true) {
 				String request = getRequest();

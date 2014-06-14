@@ -7,8 +7,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class Client implements Runnable {
-	private DataOutputStream outStream;
-	private Socket socket;
+	private final DataOutputStream outStream;
+	private final Socket socket;
 
 	Client(Socket socket, DataOutputStream outStream) {
 		this.socket = socket;
@@ -17,12 +17,13 @@ public class Client implements Runnable {
 
 	public static void main(String[] args) throws IOException {
 		Socket socket = new Socket("localhost", 1337);
-		DataOutputStream outStream = new DataOutputStream(socket.getOutputStream());
+		DataOutputStream outStream = new DataOutputStream(
+				socket.getOutputStream());
 
-		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new Client(socket, outStream), 0, 1, TimeUnit.SECONDS);
+		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(
+				new Client(socket, outStream), 0, 1, TimeUnit.SECONDS);
 	}
 
-	@Override
 	public void run() {
 		try {
 			outStream.writeBytes("new_auftrag\n");

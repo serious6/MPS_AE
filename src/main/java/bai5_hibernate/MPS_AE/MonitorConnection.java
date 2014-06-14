@@ -9,21 +9,22 @@ import java.util.concurrent.TimeUnit;
 public class MonitorConnection implements Runnable {
 	private DataOutputStream outStream;
 	private Socket socket;
-	private String name;
+	private final String name;
 
-	MonitorConnection(String monitorHost, int monitorPort, String hostname, int port) {
+	MonitorConnection(String monitorHost, int monitorPort, String hostname,
+			int port) {
 		name = hostname + ":" + port;
 		try {
 			socket = new Socket(monitorHost, monitorPort);
 			outStream = new DataOutputStream(socket.getOutputStream());
 
-			Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(this, 0, 1, TimeUnit.SECONDS);
+			Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(
+					this, 0, 1, TimeUnit.SECONDS);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	@Override
 	public void run() {
 		write(name);
 	}
