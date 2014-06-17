@@ -1,8 +1,10 @@
 package bai5_hibernate.MPS_AE.hibernate.dao.generic;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -71,6 +73,26 @@ public class GenericDao<T extends Serializable> extends HibernateDaoSupport
 			e.printStackTrace();
 			throw e;
 		}
+	}
+
+	public List<T> selectAll() throws Exception {
+		List<T> result = null;
+
+		Session session = null;
+		try {
+			session = getTransaction();
+			Query query = session.createQuery("from "
+					+ this.typeParameterClass.getName());
+			result = query.list();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			if (session != null && session.getTransaction() != null)
+				session.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		}
+
+		return result;
 	}
 
 	public T update(T objectToBeUpdated) throws Exception {

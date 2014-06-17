@@ -1,5 +1,7 @@
 package bai5_hibernate.MPS_AE.hibernate.ds.impl;
 
+import java.util.List;
+
 import bai5_hibernate.MPS_AE.hibernate.dao.generic.IGenericDao;
 import bai5_hibernate.MPS_AE.hibernate.ds.GenericDs;
 
@@ -21,6 +23,10 @@ public abstract class GenericDsImpl<T> implements GenericDs<T> {
 
 	public T update(T objectToBeUpdated) throws Exception {
 		return getDao().update(objectToBeUpdated);
+	}
+
+	public List<T> selectAll() throws Exception {
+		return getDao().selectAll();
 	}
 
 }

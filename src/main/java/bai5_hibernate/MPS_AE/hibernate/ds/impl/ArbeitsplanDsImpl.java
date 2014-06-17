@@ -13,7 +13,6 @@ public class ArbeitsplanDsImpl extends GenericDsImpl<Arbeitsplan> implements
 
 	@Override
 	protected IGenericDao<Arbeitsplan> getDao() {
-		// TODO Auto-generated method stub
 		return new ArbeitsplanDao();
 	}
 }
