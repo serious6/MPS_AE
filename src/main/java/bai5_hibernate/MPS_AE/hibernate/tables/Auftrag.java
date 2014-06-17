@@ -28,6 +28,9 @@ public class Auftrag implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER)
 	private Fertigungsauftrag fertigungsauftrag;
 
+	@OneToOne(fetch = FetchType.EAGER)
+	private Rechnung rechnung;
+
 	public boolean isIstAbgeschlossen() {
 		return istAbgeschlossen;
 	}
@@ -42,6 +45,14 @@ public class Auftrag implements Serializable {
 
 	public void setBeauftragtAm(Date beauftragtAm) {
 		this.beauftragtAm = beauftragtAm;
+	}
+
+	public Rechnung getRechnung() {
+		return rechnung;
+	}
+
+	public void setRechnung(Rechnung rechnung) {
+		this.rechnung = rechnung;
 	}
 
 	public Fertigungsauftrag getFertigungsauftrag() {

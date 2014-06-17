@@ -1,5 +1,8 @@
 package bai5_hibernate.MPS_AE;
 
+import bai5_hibernate.MPS_AE.hibernate.dao.RechnungDao;
+import bai5_hibernate.MPS_AE.hibernate.tables.Rechnung;
+
 import javax.json.JsonObject;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,6 +17,8 @@ public class App implements Observer {
 	protected final TransportAdapter transportAdapter;
 
 	private ServerSocket socket;
+
+	private RechnungDao rechnungDao;
 
 	public App(String[] args) throws IOException {
 		this.appTest = new AppTest();
@@ -55,10 +60,14 @@ public class App implements Observer {
 		int id = message.getInt("id");
 		double value = message.getJsonNumber("value").doubleValue();
 
-		// todo: update value in db
-
-		if (true) {
-			transportAdapter.ship(id);
+		try {
+			Rechnung rechnung = rechnungDao.findById(id);
+			rechnung.setPaid(rechnung.getPaid() + value);
+			if (rechnung.getPaid() > rechnung.getValue()) {
+				transportAdapter.ship(id);
+			}
+		} catch (Exception e) {
+			System.out.println("id: " + id + " not found");
 		}
 	}
 }
