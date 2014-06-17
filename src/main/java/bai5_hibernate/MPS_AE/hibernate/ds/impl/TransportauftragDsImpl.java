@@ -1,13 +1,18 @@
 package bai5_hibernate.MPS_AE.hibernate.ds.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import bai5_hibernate.MPS_AE.hibernate.dao.TransportauftragDao;
+import bai5_hibernate.MPS_AE.hibernate.dao.generic.IGenericDao;
 import bai5_hibernate.MPS_AE.hibernate.ds.TransportauftragDs;
+import bai5_hibernate.MPS_AE.hibernate.tables.Transportauftrag;
 
 @Service
-public class TransportauftragDsImpl implements TransportauftragDs {
-	@Autowired(required = true)
-	private TransportauftragDao transportauftragDao;
+public class TransportauftragDsImpl extends GenericDsImpl<Transportauftrag>
+		implements TransportauftragDs<Transportauftrag> {
+
+	@Override
+	protected IGenericDao<Transportauftrag> getDao() {
+		return new TransportauftragDao();
+	}
 }

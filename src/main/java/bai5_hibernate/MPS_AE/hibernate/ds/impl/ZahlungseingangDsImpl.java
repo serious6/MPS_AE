@@ -1,14 +1,19 @@
 package bai5_hibernate.MPS_AE.hibernate.ds.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import bai5_hibernate.MPS_AE.hibernate.dao.ZahlungseingangDao;
+import bai5_hibernate.MPS_AE.hibernate.dao.generic.IGenericDao;
 import bai5_hibernate.MPS_AE.hibernate.ds.ZahlungseingangDs;
+import bai5_hibernate.MPS_AE.hibernate.tables.Zahlungseingang;
 
 @Service
-public class ZahlungseingangDsImpl implements ZahlungseingangDs {
+public class ZahlungseingangDsImpl extends GenericDsImpl<Zahlungseingang>
+		implements ZahlungseingangDs<Zahlungseingang> {
 
-	@Autowired(required = true)
-	private ZahlungseingangDao zahlungseingangDao;
+	@Override
+	protected IGenericDao<Zahlungseingang> getDao() {
+		return new ZahlungseingangDao();
+	}
+
 }

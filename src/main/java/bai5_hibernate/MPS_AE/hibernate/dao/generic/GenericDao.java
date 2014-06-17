@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import bai5_hibernate.MPS_AE.hibernate.utils.SessionFactoryBuilder;
 
 @Repository
-public class GenericDao<T extends Serializable> implements IGenericDao<T> {
+public class GenericDao<T extends Serializable> extends HibernateDaoSupport
+		implements IGenericDao<T> {
 
 	private final Class<T> typeParameterClass;
 
@@ -36,7 +38,6 @@ public class GenericDao<T extends Serializable> implements IGenericDao<T> {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public T findById(long id) throws Exception {
 		assert id > 0;
 
@@ -104,5 +105,4 @@ public class GenericDao<T extends Serializable> implements IGenericDao<T> {
 		session.beginTransaction();
 		return session;
 	}
-
 }

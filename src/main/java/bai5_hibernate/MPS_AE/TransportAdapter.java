@@ -12,10 +12,10 @@ public class TransportAdapter implements Transport {
 
 	}
 
-	@Override
 	public void ship(int id) {
 		try {
-			HttpURLConnection connection = (HttpURLConnection)new URL("http://localhost:8080/ship/" + id).openConnection();
+			HttpURLConnection connection = (HttpURLConnection) new URL(
+					"http://localhost:8080/ship/" + id).openConnection();
 			connection.setRequestMethod("PUT");
 			int responseCode = connection.getResponseCode();
 		} catch (MalformedURLException e) {

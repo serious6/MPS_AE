@@ -1,7 +1,6 @@
-package bai5_hibernate.MPS_AE.hibernate.dao.generic;
+package bai5_hibernate.MPS_AE.hibernate.ds;
 
-public interface IGenericDao<T> {
-
+public interface GenericDs<T> {
 	public T findById(long id) throws Exception;
 
 	public void add(T theObject) throws Exception;

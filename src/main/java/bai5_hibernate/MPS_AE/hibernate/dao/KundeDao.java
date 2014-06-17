@@ -7,9 +7,7 @@ import bai5_hibernate.MPS_AE.hibernate.tables.Kunde;
 
 @Repository
 public class KundeDao extends GenericDao<Kunde> {
-
 	public KundeDao() {
 		super(Kunde.class);
 	}
-
 }

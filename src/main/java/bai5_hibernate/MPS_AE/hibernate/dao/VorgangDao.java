@@ -7,9 +7,7 @@ import bai5_hibernate.MPS_AE.hibernate.tables.Vorgang;
 
 @Repository
 public class VorgangDao extends GenericDao<Vorgang> {
-
 	public VorgangDao() {
 		super(Vorgang.class);
 	}
-
 }

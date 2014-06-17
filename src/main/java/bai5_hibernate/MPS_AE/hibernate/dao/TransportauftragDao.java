@@ -7,9 +7,7 @@ import bai5_hibernate.MPS_AE.hibernate.tables.Transportauftrag;
 
 @Repository
 public class TransportauftragDao extends GenericDao<Transportauftrag> {
-
 	public TransportauftragDao() {
 		super(Transportauftrag.class);
 	}
-
 }

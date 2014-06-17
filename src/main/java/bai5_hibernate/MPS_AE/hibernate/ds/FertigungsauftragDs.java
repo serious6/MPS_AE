@@ -1,5 +1,5 @@
 package bai5_hibernate.MPS_AE.hibernate.ds;
 
-public interface FertigungsauftragDs {
+public interface FertigungsauftragDs<T> extends GenericDs<T> {
 
 }

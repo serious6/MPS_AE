@@ -1,13 +1,18 @@
 package bai5_hibernate.MPS_AE.hibernate.ds.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import bai5_hibernate.MPS_AE.hibernate.dao.BauteilDao;
+import bai5_hibernate.MPS_AE.hibernate.dao.generic.IGenericDao;
 import bai5_hibernate.MPS_AE.hibernate.ds.BauteilDs;
+import bai5_hibernate.MPS_AE.hibernate.tables.Bauteil;
 
 @Service
-public class BauteilDsImpl implements BauteilDs {
-	@Autowired(required = true)
-	private BauteilDao bauteilDao;
+public class BauteilDsImpl extends GenericDsImpl<Bauteil> implements
+		BauteilDs<Bauteil> {
+
+	@Override
+	protected IGenericDao<Bauteil> getDao() {
+		return new BauteilDao();
+	}
 }

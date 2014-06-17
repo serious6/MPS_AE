@@ -7,9 +7,7 @@ import bai5_hibernate.MPS_AE.hibernate.tables.Stueckliste;
 
 @Repository
 public class StuecklisteDao extends GenericDao<Stueckliste> {
-
 	public StuecklisteDao() {
 		super(Stueckliste.class);
 	}
-
 }

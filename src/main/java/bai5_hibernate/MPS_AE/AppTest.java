@@ -144,11 +144,11 @@ public class AppTest {
 				vorgangDao.findById(vorgang2.getNummer()).getArt());
 	}
 
-	public void testComplex() throws Exception {
-		Bauteil bauteil = bauteilDao.findById(1l);
-
-		Assert.assertFalse(bauteilDao.isComplex(bauteil));
-	}
+	// public void testComplex() throws Exception {
+	// Bauteil bauteil = bauteilDao.findById(1l);
+	//
+	// Assert.assertFalse(bauteilDao.isComplex(bauteil));
+	// }
 
 	private void auftragErstellen() throws Exception {
 		auftrag = new Auftrag();
