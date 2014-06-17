@@ -1,29 +1,25 @@
 package bai5_hibernate.MPS_AE;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
+import javax.json.JsonObject;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.Observable;
+import java.util.Observer;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-
-public class App {
+public class App implements Observer {
 
 	protected final AppTest appTest;
+	protected final HapsaaListener hapsaaListener;
+	protected final TransportAdapter transportAdapter;
 
 	private ServerSocket socket;
 
-	public App(String[] args) {
+	public App(String[] args) throws IOException {
 		this.appTest = new AppTest();
+		transportAdapter = new TransportAdapter();
+		hapsaaListener = new HapsaaListener();
+		hapsaaListener.addObserver(this);
 		listen(args);
 	}
 
@@ -51,5 +47,18 @@ public class App {
 
 	public static void main(String[] args) throws Exception {
 		new App(args);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		JsonObject message = (JsonObject)arg;
+		int id = message.getInt("id");
+		double value = message.getJsonNumber("value").doubleValue();
+
+		// todo: update value in db
+
+		if (true) {
+			transportAdapter.ship(id);
+		}
 	}
 }

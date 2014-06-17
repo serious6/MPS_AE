@@ -20,8 +20,10 @@ public class Client implements Runnable {
 		DataOutputStream outStream = new DataOutputStream(
 				socket.getOutputStream());
 
-		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(
-				new Client(socket, outStream), 0, 1, TimeUnit.SECONDS);
+//		Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(
+//				new Client(socket, outStream), 0, 1, TimeUnit.SECONDS);
+
+		new Client(socket, outStream).run();
 	}
 
 	public void run() {
