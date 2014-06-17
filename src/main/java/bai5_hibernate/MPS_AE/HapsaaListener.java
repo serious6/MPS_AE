@@ -1,11 +1,17 @@
 package bai5_hibernate.MPS_AE;
 
-import com.rabbitmq.client.*;
-
-import javax.json.Json;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Observable;
+
+import javax.json.Json;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.ConsumerCancelledException;
+import com.rabbitmq.client.QueueingConsumer;
+import com.rabbitmq.client.ShutdownSignalException;
 
 public class HapsaaListener extends Observable implements Runnable {
 	private final static String QUEUE_NAME = "hapsar";
@@ -29,7 +35,8 @@ public class HapsaaListener extends Observable implements Runnable {
 		QueueingConsumer consumer = new QueueingConsumer(channel);
 		channel.basicConsume(QUEUE_NAME, true, consumer);
 
-		System.out.println("HapsaaListener is ready and waiting for Messages...");
+		System.out
+				.println("HapsaaListener is ready and waiting for Messages...");
 		while (isRunning()) {
 			QueueingConsumer.Delivery delivery = null;
 			try {
@@ -37,7 +44,8 @@ public class HapsaaListener extends Observable implements Runnable {
 				String message = new String(delivery.getBody());
 				System.out.println("[x] Received " + message);
 				setChanged();
-				notifyObservers(Json.createReader(new StringReader(message)).readObject());
+				notifyObservers(Json.createReader(new StringReader(message))
+						.readObject());
 			} catch (ShutdownSignalException e) {
 				cancel();
 				System.out.println(e);
@@ -59,7 +67,6 @@ public class HapsaaListener extends Observable implements Runnable {
 		this.run = false;
 	}
 
-	@Override
 	public void run() {
 		try {
 			waitForMessages();

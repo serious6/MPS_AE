@@ -1,14 +1,15 @@
 package bai5_hibernate.MPS_AE;
 
-import bai5_hibernate.MPS_AE.hibernate.dao.RechnungDao;
-import bai5_hibernate.MPS_AE.hibernate.tables.Rechnung;
-
-import javax.json.JsonObject;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Observable;
 import java.util.Observer;
+
+import javax.json.JsonObject;
+
+import bai5_hibernate.MPS_AE.hibernate.dao.RechnungDao;
+import bai5_hibernate.MPS_AE.hibernate.tables.Rechnung;
 
 public class App implements Observer {
 
@@ -41,9 +42,11 @@ public class App implements Observer {
 
 			while (true) {
 				Socket connection = socket.accept();
-				System.out.println("Dispatcher connected from: " + connection.getRemoteSocketAddress().toString());
+				System.out.println("Dispatcher connected from: "
+						+ connection.getRemoteSocketAddress().toString());
 
-				new MonitorConnection(monitorHost, monitorPort, "localhost", port);
+				new MonitorConnection(monitorHost, monitorPort, "localhost",
+						port);
 				new Thread(new DispatcherConnection(this, connection)).start();
 			}
 		} catch (IOException e) {
@@ -55,9 +58,8 @@ public class App implements Observer {
 		new App(args);
 	}
 
-	@Override
 	public void update(Observable o, Object arg) {
-		JsonObject message = (JsonObject)arg;
+		JsonObject message = (JsonObject) arg;
 		int id = message.getInt("id");
 		double value = message.getJsonNumber("value").doubleValue();
 
