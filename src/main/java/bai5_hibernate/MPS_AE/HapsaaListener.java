@@ -7,9 +7,10 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.Observable;
 
-public class HapsaaListener extends Observable {
+public class HapsaaListener extends Observable implements Runnable {
 	private final static String QUEUE_NAME = "hapsar";
 	private boolean run = true;
+	private Channel channel;
 
 	public HapsaaListener() throws IOException {
 		try {
@@ -17,11 +18,10 @@ public class HapsaaListener extends Observable {
 			ConnectionFactory factory = new ConnectionFactory();
 			factory.setHost("localhost");
 			Connection connection = factory.newConnection();
-			Channel channel = connection.createChannel();
+			channel = connection.createChannel();
 
 			try {
 				channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-				waitForMessages(channel);
 			} finally {
 				if (channel != null)
 					channel.close();
@@ -33,7 +33,7 @@ public class HapsaaListener extends Observable {
 		}
 	}
 
-	private void waitForMessages(Channel channel) throws IOException {
+	private void waitForMessages() throws IOException {
 		QueueingConsumer consumer = new QueueingConsumer(channel);
 		channel.basicConsume(QUEUE_NAME, true, consumer);
 
@@ -65,5 +65,14 @@ public class HapsaaListener extends Observable {
 
 	public void cancel() {
 		this.run = false;
+	}
+
+	@Override
+	public void run() {
+		try {
+			waitForMessages();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

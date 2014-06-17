@@ -12,7 +12,6 @@ import java.util.Observer;
 
 public class App implements Observer {
 
-	protected final AppTest appTest;
 	protected final HapsaaListener hapsaaListener;
 	protected final TransportAdapter transportAdapter;
 
@@ -21,10 +20,12 @@ public class App implements Observer {
 	private RechnungDao rechnungDao;
 
 	public App(String[] args) throws IOException {
-		this.appTest = new AppTest();
 		transportAdapter = new TransportAdapter();
+
 		hapsaaListener = new HapsaaListener();
 		hapsaaListener.addObserver(this);
+		new Thread(hapsaaListener).start();
+
 		listen(args);
 	}
 
