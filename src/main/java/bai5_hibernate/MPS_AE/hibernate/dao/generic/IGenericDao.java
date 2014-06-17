@@ -7,4 +7,6 @@ public interface IGenericDao<T> {
 	public void add(T theObject) throws Exception;
 
 	public void remove(T theObject) throws Exception;
+
+	public T update(T objectToBeUpdated) throws Exception;
 }

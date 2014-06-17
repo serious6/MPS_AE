@@ -19,4 +19,8 @@ public abstract class GenericDsImpl<T> implements GenericDs<T> {
 		getDao().remove(theObject);
 	}
 
+	public T update(T objectToBeUpdated) throws Exception {
+		return getDao().update(objectToBeUpdated);
+	}
+
 }
