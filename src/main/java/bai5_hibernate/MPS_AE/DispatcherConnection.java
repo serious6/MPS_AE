@@ -2,6 +2,10 @@ package bai5_hibernate.MPS_AE;
 
 import bai5_hibernate.MPS_AE.hibernate.dao.AuftragDao;
 import bai5_hibernate.MPS_AE.hibernate.dao.RechnungDao;
+import bai5_hibernate.MPS_AE.hibernate.ds.AuftragDs;
+import bai5_hibernate.MPS_AE.hibernate.ds.RechnungDs;
+import bai5_hibernate.MPS_AE.hibernate.ds.impl.AuftragDsImpl;
+import bai5_hibernate.MPS_AE.hibernate.ds.impl.RechnungDsImpl;
 import bai5_hibernate.MPS_AE.hibernate.tables.Auftrag;
 import bai5_hibernate.MPS_AE.hibernate.tables.Rechnung;
 
@@ -16,15 +20,15 @@ public class DispatcherConnection implements Runnable {
 	private final App app;
 	private BufferedReader inStream;
 
-	private AuftragDao auftragDao;
-	private RechnungDao rechnungDao;
+	private AuftragDs<Auftrag> auftragDs;
+	private RechnungDs<Rechnung> rechnungDs;
 
 	DispatcherConnection(App app, Socket socket) {
 		this.app = app;
 		this.socket = socket;
 
-		auftragDao = new AuftragDao();
-		rechnungDao = new RechnungDao();
+		auftragDs = new AuftragDsImpl();
+		rechnungDs = new RechnungDsImpl();
 	}
 
 	public void run() {
@@ -36,15 +40,17 @@ public class DispatcherConnection implements Runnable {
 				String request = getRequest();
 				if (request.equals("new_auftrag")) {
 					Rechnung rechnung = new Rechnung();
+					Auftrag auftrag = new Auftrag();
+					rechnungDs.add(rechnung);
+					auftragDs.add(auftrag);
+
+					rechnung.setAuftrag(auftrag);
 					rechnung.setPaid(0);
 					rechnung.setValue(100);
-					rechnungDao.add(rechnung);
 
-					Auftrag auftrag = new Auftrag();
+					auftrag.setRechnung(rechnung);
 					auftrag.setBeauftragtAm(new Date());
 					auftrag.setIstAbgeschlossen(false);
-					auftrag.setRechnung(rechnung);
-					auftragDao.add(auftrag);
 
 					System.out.println("Auftrag erstellt. Rechnungsnr.: " + rechnung.getNummer() + ", Betrag: " + rechnung.getValue());
 				}
