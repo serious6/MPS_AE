@@ -19,15 +19,7 @@ public class HapsaaListener extends Observable implements Runnable {
 			factory.setHost("localhost");
 			Connection connection = factory.newConnection();
 			channel = connection.createChannel();
-
-			try {
-				channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-			} finally {
-				if (channel != null)
-					channel.close();
-				if (connection != null)
-					connection.close();
-			}
+			channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 		} finally {
 			System.out.println("HapsaaListener is shutting Down");
 		}
