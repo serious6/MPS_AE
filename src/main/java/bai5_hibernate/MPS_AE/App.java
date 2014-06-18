@@ -8,7 +8,6 @@ import java.util.Observer;
 
 import javax.json.JsonObject;
 
-import bai5_hibernate.MPS_AE.hibernate.dao.RechnungDao;
 import bai5_hibernate.MPS_AE.hibernate.ds.RechnungDs;
 import bai5_hibernate.MPS_AE.hibernate.ds.impl.RechnungDsImpl;
 import bai5_hibernate.MPS_AE.hibernate.tables.Rechnung;
@@ -20,7 +19,7 @@ public class App implements Observer {
 
 	private ServerSocket socket;
 
-	private RechnungDs<Rechnung> rechnungDs;
+	private final RechnungDs<Rechnung> rechnungDs;
 
 	public App(String[] args) throws IOException {
 		rechnungDs = new RechnungDsImpl();
@@ -69,6 +68,8 @@ public class App implements Observer {
 		try {
 			Rechnung rechnung = rechnungDs.findById(id);
 			rechnung.setPaid(rechnung.getPaid() + value);
+			if (rechnung.getValue() <= rechnung.getPaid())
+				System.out.println("Rechnung wurde vollständig bezahlt");
 			rechnungDs.update(rechnung);
 			if (rechnung.getPaid() > rechnung.getValue()) {
 				transportAdapter.ship(id);

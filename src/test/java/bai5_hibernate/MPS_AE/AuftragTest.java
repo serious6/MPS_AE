@@ -29,10 +29,10 @@ public class AuftragTest extends GeneralTest {
 		auftrag.setIstAbgeschlossen(false);
 		auftrag.setFertigungsauftrag(getFertigungsauftrag(auftrag));
 
-		auftragDao.add(auftrag);
+		auftragDs.add(auftrag);
 
 		fertigungsauftrag.setAuftrag(auftrag);
-		fertigungsauftragDao.update(fertigungsauftrag);
+		fertigungsauftragDs.update(fertigungsauftrag);
 
 		Assert.assertNotNull(auftrag.getNummer());
 	}
@@ -42,7 +42,7 @@ public class AuftragTest extends GeneralTest {
 		fertigungsauftrag = new Fertigungsauftrag();
 		fertigungsauftrag.setBauteil(getBauteil(fertigungsauftrag));
 
-		fertigungsauftragDao.add(fertigungsauftrag);
+		fertigungsauftragDs.add(fertigungsauftrag);
 		return fertigungsauftrag;
 	}
 
@@ -52,12 +52,12 @@ public class AuftragTest extends GeneralTest {
 		bauteil.setArbeitsplan(getArbeitsplan(bauteil));
 		bauteil.setName("Erstes Bauteil");
 
-		bauteilDao.add(bauteil);
+		bauteilDs.add(bauteil);
 		bauteil.addFertigungsauftrag(fertigungsauftrag);
-		bauteilDao.update(bauteil);
+		bauteilDs.update(bauteil);
 
 		arbeitsplan.setBauteil(bauteil);
-		arbeitsplanDao.update(arbeitsplan);
+		arbeitsplanDs.update(arbeitsplan);
 
 		return bauteil;
 	}
@@ -66,10 +66,10 @@ public class AuftragTest extends GeneralTest {
 		arbeitsplan = new Arbeitsplan();
 		arbeitsplan.setVorgangsListe(getVorgaenge(arbeitsplan));
 
-		arbeitsplanDao.add(arbeitsplan);
+		arbeitsplanDs.add(arbeitsplan);
 
 		vorgang.setArbeitsplan(arbeitsplan);
-		vorgangDao.update(vorgang);
+		vorgangDs.update(vorgang);
 
 		return arbeitsplan;
 	}
@@ -79,7 +79,7 @@ public class AuftragTest extends GeneralTest {
 		vorgang = new Vorgang();
 		vorgang.setArt(VorgangArtTyp.BEREITSTELLUNG);
 
-		vorgangDao.add(vorgang);
+		vorgangDs.add(vorgang);
 		vorgangsliste.add(vorgang);
 		return vorgangsliste;
 	}
@@ -88,27 +88,27 @@ public class AuftragTest extends GeneralTest {
 	public void testFertigungArtikel() throws Exception {
 		auftragErstellen();
 
-		auftrag = auftragDao.findById(auftrag.getNummer());
+		auftrag = auftragDs.findById(auftrag.getNummer());
 		arbeitsplan = auftrag.getFertigungsauftrag().getBauteil()
 				.getArbeitsplan();
 
 		Vorgang vorgang2 = null;
 		for (Vorgang vorgang : arbeitsplan.getVorgangsListe()) {
 			vorgang.setArt(VorgangArtTyp.MONTAGE);
-			vorgangDao.update(vorgang);
+			vorgangDs.update(vorgang);
 
 			vorgang2 = vorgang;
 		}
 
 		Assert.assertSame(VorgangArtTyp.MONTAGE,
-				vorgangDao.findById(vorgang2.getNummer()).getArt());
+				vorgangDs.findById(vorgang2.getNummer()).getArt());
 	}
 
 	// @Test
 	// public void testComplex() throws Exception{
-	// Bauteil bauteil = bauteilDao.findById(1l);
+	// Bauteil bauteil = bauteilDs.findById(1l);
 	//
-	// Assert.assertFalse(bauteilDao.isComplex(bauteil));
+	// Assert.assertFalse(bauteilDs.isComplex(bauteil));
 	// }
 
 	private void auftragErstellen() throws Exception {
@@ -117,10 +117,10 @@ public class AuftragTest extends GeneralTest {
 		auftrag.setIstAbgeschlossen(false);
 		auftrag.setFertigungsauftrag(getFertigungsauftrag(auftrag));
 
-		auftragDao.add(auftrag);
+		auftragDs.add(auftrag);
 
 		fertigungsauftrag.setAuftrag(auftrag);
-		fertigungsauftragDao.update(fertigungsauftrag);
+		fertigungsauftragDs.update(fertigungsauftrag);
 	}
 
 }
