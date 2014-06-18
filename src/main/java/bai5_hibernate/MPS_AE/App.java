@@ -68,10 +68,9 @@ public class App implements Observer {
 		try {
 			Rechnung rechnung = rechnungDs.findById(id);
 			rechnung.setPaid(rechnung.getPaid() + value);
-			if (rechnung.getValue() <= rechnung.getPaid())
-				System.out.println("Rechnung wurde vollständig bezahlt");
 			rechnungDs.update(rechnung);
-			if (rechnung.getPaid() > rechnung.getValue()) {
+			if (rechnung.getPaid() >= rechnung.getValue()) {
+				System.out.println("Rechnung wurde vollständig bezahlt");
 				transportAdapter.ship(id);
 			}
 		} catch (Exception e) {
