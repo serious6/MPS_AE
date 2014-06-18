@@ -52,6 +52,9 @@ public class DispatcherConnection implements Runnable {
 					auftrag.setBeauftragtAm(new Date());
 					auftrag.setIstAbgeschlossen(false);
 
+                    rechnungDs.update(rechnung);
+                    auftragDs.update(auftrag);
+
 					System.out.println("Auftrag erstellt. Rechnungsnr.: " + rechnung.getNummer() + ", Betrag: " + rechnung.getValue());
 				}
 			}
