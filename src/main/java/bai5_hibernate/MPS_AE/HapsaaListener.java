@@ -55,6 +55,9 @@ public class HapsaaListener extends Observable implements Runnable {
 			} catch (InterruptedException e) {
 				cancel();
 				System.out.println(e);
+			} catch (Exception e) {
+				cancel();
+				e.printStackTrace();
 			}
 		}
 	}
